@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASync Await </title>
+</head>
+
+<body>
+
+    <script>
+
+        async function harry() {
+
+            let delhiWeather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("27 Deg")
+                }, 3000)
+            })
+            let bangloreWeather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("21 Deg")
+                }, 5000)
+            })
+
+
+            // delhiWeather.then(alert)
+            // bangloreWeather.then(alert)
+
+            console.log("Fetching delhi weather please wait")
+            let delhiW = await delhiWeather
+            console.log("Fetched delhi  weather : ", delhiW)
+
+            console.log("Fetching bangalore weather please wait")
+            let bangloreW = await bangloreWeather
+            console.log("Fetched bangalore  weather : ", bangloreW)
+
+            return [delhiW, bangloreW]
+
+        }
+
+        const cherry = async () => {
+            console.log("Haanji kiddan???? Mein hu cherry and ab wait karna padega")
+        }
+        const main1 = async () => {
+
+            console.log("Welcome to weather control room")
+            let a = await harry()
+            let b = await cherry()
+          console.log(a) 
+        }
+        main1()
+            </script>
+</body>
+
+</html>

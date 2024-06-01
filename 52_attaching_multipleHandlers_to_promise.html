@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // alert("Hey I am not resolved")
+                resolve(134343)
+            }, 2000)
+        })
+        p1.then(() => {
+            console.log("Hurray")
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(69)
+                }, 6000)
+            })
+        }).then((value) => {
+            console.log(value)
+        })
+
+
+        p1.then(() => {
+            console.log("Congrats this promise is now resolved")
+        }).then(() => {
+            console.log("systum")
+        })
+
+    </script>
+
+</body>
+
+</html>

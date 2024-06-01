@@ -1,0 +1,89 @@
+<!-- Practice Set - 8 -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set - 8</title>
+    <style>
+        
+
+        .bulb{
+            
+            background: yellow;
+        }
+
+        .bulb-container {
+            height: 84px;
+            width: 84px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Problem - 1 -->
+    <button onclick="alert('Give me one lamborghini')">lamborghini</button>
+    <button onclick="alert('Give me one porsche gtr341')">porsche</button>
+    <button onclick="alert('Give me one ferrrari')">ferrrari</button>
+
+    <!-- Problem - 2
+    <h1>BookMarks</h1>
+    <a href="https://google.com" id="google"><button>Google</button></a>
+    <a href="https://twitter.com" id="twitter"><button>Twitter</button></a>
+    <a href="https://facebook.com" id="facebook"><button>Facebook</button></a> -->
+
+
+
+
+    <!-- Problem - 3 -->
+    <h1>BookMarks</h1>
+    <button id="google">Google</button>
+    <button id="twitter">Twitter</button>
+    <button id="facebook">Facebook</button>
+
+
+    <!-- Problem 5 -->
+    <div id="bulb" class="bulb-container bulb"></div>
+
+    <script>
+        //  Problem - 3
+
+        // document.getElementById('google').addEventListener('click', function () {
+        //     window.location = "https://www.google.com";
+        // })
+        // document.getElementById('twitter').addEventListener('click', function () {
+        //     window.location = "https://www.twitter.com";
+        // })
+        // document.getElementById('facebook').addEventListener('click', function () {
+        //     window.location = "https://www.facebook.com";
+        // })
+
+
+        // Problem - 4
+
+        // const fetchContent = async (url) => {
+        //     con = await fetch(url)
+        //     let a = await con.json()
+        //     return a;
+        // }
+
+        // setInterval(function () {
+        //     let url = "https://jsonplaceholder.typicode/com/todos/1"
+        //     console.log(await fetchContent(url))
+        // }, 3000)
+
+
+        // Problem - 5
+
+        setInterval(async function() {
+            document.querySelector("#bulb").classList.toggle("bulb")
+        },300)
+
+    </script>
+</body>
+
+</html>

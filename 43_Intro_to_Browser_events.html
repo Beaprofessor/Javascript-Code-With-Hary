@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+    <style>
+        body {
+            background-color: #232323;
+            color: white;
+        }
+
+        .container {
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" onmouseenter="console.log('container ke andar mouse gaya')"
+        onclick="console.log('container mei click hua')">
+        <button onclick=>Click me</button>
+    </div>
+    <!-- Events can clicked through HTML attributes -->
+    <!-- Events can also be handled through the onclick property -->
+
+    <!-- Note :: Adding a handler with javascript overwrite existing handler -->
+
+    <script>
+        //  An event is a signal that something has happened . All the DOM nodes generate such signals
+
+        // Some important DOM events are :
+        // 1. Mouse events -->> click , contextmenu(right click) , mouseover/mousout , mousedown/mouseup , mousemove
+        // 2. Keyboard evenets -->> keydown and keyup
+        // 3. Form element events -->> submit , focus etc
+        // 4. document events -->> DOMContentLoaded
+
+     
+
+        let a = document.getElementsByClassName('container')[0]
+        a.onclick = () =>{
+            let b = document.getElementsByClassName('container')[0]
+            b.innerHTML = " hello ji ki haal hai ?? "
+        }
+                                                                                                            
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #232323;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="btn">Click karo bhaiisaaab</button>
+    </div>
+
+
+    <script>
+
+        // addEventListener is used to assign multiple handlers to an event
+
+        // element.addEventListener(event , handler)  -->> It is used to add the event
+        // element.removeEventListener(event, handler) -->>It is used to remove the event
+
+        // handler must be same function for both the listener to work or run.
+
+        let x = function (e) {
+            console.log(e.target)
+            console.log(e)
+            console.log(e.type)
+            console.log(e.currentTarget)
+            console.log(e.clientX , e.clientY)
+            // alert("Hello World 1")
+        }
+
+        // let y = function(f) {
+        //     console.log(f)
+        //     alert("Hello World 2")
+        // }
+
+        btn.addEventListener('click', x)
+
+        // btn.addEventListener('click', y)
+
+        // let a = prompt("What is your favourite number")
+        // if (a == "2") {
+        //     btn.removeEventListener('click',x)
+        // }
+
+    </script>
+</body>
+
+</html>

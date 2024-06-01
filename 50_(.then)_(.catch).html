@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #232323;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        let p1 = new Promise((resolve, reject) => {
+            console.log("Promise is pending")
+            setTimeout(() => {
+                console.log("I am a promise and I am resolved")
+                resolve(true)
+            }, 5000)
+        })
+        let p2 = new Promise((resolve, reject) => {
+            console.log("Promise is pending")
+            setTimeout(() => {
+                // console.log("I am a promise and I am rejected")
+                reject(new Error("I am an error"))
+            }, 5000)
+        })
+        // p1.then(alert("Haaaanjiii Kidddaaannn"))
+
+        // To get the value  
+        p1.then((value) => {
+            console.log(value)
+        })
+
+        // To get the errors
+        // p2.catch((error) => {
+        //     console.log("Some error occured in p2")
+        // })
+
+        p2.then((value)=>{
+         console.log(value)   
+        },(error) => {                      // agar mujhe value ni milti hai toh aese error nikal lenge fir apan  without catch
+            console.log(error)
+        })
+    </script>
+
+
+</body>
+
+</html>

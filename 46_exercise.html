@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock - time dekheya ??</title>
+</head>
+
+<style>
+    body {
+        background: #232323;
+        color: white;
+    }
+    #clock{
+        background-color: rgb(96, 180, 239);
+        width: 300px;
+        height: 100px;
+        font-size: 2rem;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 175px;
+        padding: auto;
+    }
+</style>
+
+<body>
+    <div id="clock">
+
+    </div>
+
+    <script>
+        function updateClock () {
+            
+            let a = new Date()
+            let h = a.getHours()
+            let m = a.getMinutes()
+            let s = a.getSeconds()
+    
+
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? '0' + m : m;
+            s = s < 10 ? '0' + s : s;
+            
+            let timeString = `${h}:${m}:${s}`
+            let frame = `hh:mm::ss`
+
+            document.getElementById('clock').innerHTML = `${timeString}<br>${frame}`
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+
+    </script>
+</body>
+
+</html>
