@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+</head>
+
+<body>
+    <div id="user">
+
+    </div>
+
+    <script>
+
+        async function user() {
+            let ashish = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Initialising the Program...")
+                }, 1000)
+            })
+            await new Promise(resolve => setTimeout(resolve, 2000))
+            console.log("Hacking Ashish Username and Password.......")
+
+            await new Promise(resolve => setTimeout(resolve, 3000))
+            console.log("Username found Ashish17.......")
+            
+            await new Promise(resolve => setTimeout(resolve, 4000))
+            console.log("Connecting to Instagram.......")
+            
+            await new Promise(resolve => setTimeout(resolve, 5000))
+            console.log("Connected.......")
+            
+            await new Promise(resolve => setTimeout(resolve, 6000))
+            console.log("Password Cracked of Ashish17.......")
+            
+            await new Promise(resolve => setTimeout(resolve, 7000))
+            console.log("All the chats of Ashish17 are cloned.......")
+        
+        }
+
+        const main1 = async () => {
+            let a = await user()
+        }
+        main1()
+    </script>
+</body> -->
+
+
+</html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Display</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #log {
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00FF00;
+            padding: 20px;
+            box-shadow: 0 0 10px #00FF00;
+            overflow: auto;
+            height: 60vh;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-shadow: 0 0 10px #00FF00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hacker Console</h1>
+    <div id="log"></div>
+
+    <script>
+        async function user() {
+            const logElement = document.getElementById("log");
+
+            function log(message) {
+                const entry = document.createElement("div");
+                entry.className = "log-entry";
+                entry.textContent = message;
+                logElement.appendChild(entry);
+                logElement.scrollTop = logElement.scrollHeight;
+            }
+
+            let ashish = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Initialising Hack Program...");
+                }, 1000);
+            });
+
+            let hacker = await ashish;
+            log("Fetched details of ashish: " + hacker);
+
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            log("Hacking Ashish Username and Password.......");
+
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            log("Connecting to Instagram.......");
+            
+            await new Promise(resolve => setTimeout(resolve, 4000));
+            log("Username found Ashish17.......");
+            
+            await new Promise(resolve => setTimeout(resolve, 5000));
+            log("Connected.......");
+
+            await new Promise(resolve => setTimeout(resolve, 6000));
+            log("Password Cracked of Ashish17.......");
+
+            await new Promise(resolve => setTimeout(resolve, 7000));
+            log("All the chats of Ashish17 are cloned.......");
+
+            return "All steps completed.";
+        }
+
+        const main1 = async () => {
+            let a = await user();
+            console.log(a);
+        }
+
+        main1();
+    </script>
+</body>
+</html> 
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color:#00FF00 ;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">
+
+    </div>
+    
+    <script>
+        let a = [
+            "Initializing Hack tool",
+            "Connecting to Instagram",
+            "Connecting to server 1",
+            "Connection failed . Retrying....",
+            "Connecting to server 2",
+            "Connected Successfully...",
+            "Username BlazerAsh",
+            "Trying Brute Force",
+            "200K passwords tried...",
+            "Match Not found.",
+            "Another 200K passwords tried...",
+            "Match Not found.",
+            "Another 200K passwords tried...",
+            "Match Found!!!!!! Bete tu toh gaya.",
+            "Accessing Account",
+            "Hack Successfull"
+
+        ]
+
+        const sleep = (seconds)=>{
+            return new Promise ((resolve , reject) =>{
+               setTimeout(()=>{resolve(true)},seconds*1000) 
+            })
+        }
+
+        const showHack = async (message) => {
+            sleep(2)
+            console.log(message)
+            text.innerHTML = text.innerHTML + message + "<br>"
+        }
+
+        (async() => {
+            for(let i =0;i<a.length;i++){
+                await showHack(a[i])
+            }
+        })()
+    </script>
+</body>
+</html> -->
