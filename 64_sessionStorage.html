@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <!-- Ye bahut kam use hoga  -->
+    <!-- Ye only current tab par kaam karega -->
+    <script>
+        sessionStorage.setItem("name" , "harry")
+        sessionStorage.getItem("name")
+        sessionStorage.clear()
+        sessionStorage.removeItem("name")
+
+        // Storage Event =>>   When the data gets updated in localStorage or sessionStorage , storage event triggers with these properties...
+
+        window.onstorage = (e) => {
+                    alert("changed")
+                    console.log(e)
+        }
+
+
+    </script>
+</body>
+</html>
