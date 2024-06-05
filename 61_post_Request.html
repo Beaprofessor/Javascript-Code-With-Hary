@@ -9,31 +9,93 @@
 
 <body>
     <script>
-        const createTodo = async () => {
+        // const createTodo = async () => {
 
+        //     let options = {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-type": "application/json"
+        //         },
+        //         body: JSON.stringify({
+        //             title: 'Harry',
+        //             body: 'Bhaii',
+        //             userId: 1100,
+        //         }),
+        //     }
+        //     let p = await fetch('https://jsonplaceholder.typicode.com/posts', options)
+        //     let response = await p.json()
+        //     return response
+
+        // }
+
+        // const mainFunc = async() => {
+        //     let todo = await createTodo()
+        //     console.log(todo)
+        // }
+
+        // mainFunc()
+
+
+        // Chaliye fir se padhte hai post request with Fetch API
+
+        //  POST request -> To make a post request we need to use fetch options.
+
+        // let options = {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-type": "application/json"
+        //     },
+        //     body: JSON.stringify({      // json.stringify ek javascript object ko string mei convert kardeta hai 
+        //         title: 'Harry',
+        //         body: 'Bhaiii',
+        //         userId: 1111,
+        //     }),
+        // }
+
+        // fetch('https://jsonplaceholder.typicode.com/posts', options)
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+
+        // ye upar wala toh apan ne js fetch ko use kara hai ab async await ko use karenge apan log
+
+        const createTodo = async (todo) => {
             let options = {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
                 },
-                body: JSON.stringify({
-                    title: 'Harry',
-                    body: 'Bhaii',
-                    userId: 1100,
-                }),
+                body: JSON.stringify(todo), //  // json.stringify ek javascript object ko string mei convert kardeta hai 
             }
             let p = await fetch('https://jsonplaceholder.typicode.com/posts', options)
             let response = await p.json()
             return response
-
         }
 
-        const mainFunc = async() => {
-            let todo = await createTodo()
-            console.log(todo)
+
+        const getTodo = async (id) => {
+            let response = await fetch('https://jsonplaceholder.typicode.com/posts/' + id )
+            let r = await response.json()
+            return r
         }
 
-        mainFunc()
+        const main1 = async () => {
+            let todo = {
+                title: 'Harry1212',
+                body: 'Bhaiii2121',
+                userId: 1111,
+            }
+            let todor = await createTodo(todo)
+            console.log(todor)
+            console.log(await getTodo(101))
+        }
+
+
+
+        main1()
+
+
+
 
     </script>
 </body>
