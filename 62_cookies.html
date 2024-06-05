@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies in JS</title>
+    <style>
+        body {
+            background-color: #232323;
+            color: white;
+        }
+    </style>
+</head>
+<!-- Cookies are small strings of data stored directly in the browser   ,  Key value pairs are separeted by ; or (-) dash-->
+<!-- In JS , document.cookie provides access to cookies -->
+
+<!-- samjhne ke liye isko aese bol sakte hai ki ye cookies are to store the data -->
+
+<body>
+    <script>
+        console.log(document.cookie)
+        document.cookie = "name = haarrybhgaii"
+        document.cookie = "name123 = h231323aarrybhgaii"
+
+
+        document.cookie = "name1 = systum"
+
+        let key = prompt("Enter your key")
+        let value = prompt("Enter your value")
+
+        document.cookie = `${encodeURIComponent(key)} = ${encodeURIComponent(value)}`   // it is used to encode the special characters and using decodeURIComponent i can decode the special characters
+        console.log(document.cookie)
+
+
+    </script>
+</body>
+
+</html>
