@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Overriding</title>
+</head>
+
+<body>
+
+    <script>
+        class employee {
+            constructor(name) {
+                console.log(`${name} - Employee constructor is here!!!!!!`)
+                this.name = name
+            }
+            login() {
+                console.log(`Employee has logged in`)
+            }
+            logout() {
+                console.log(`Employee has logged out`)
+            }
+            requestLeaves(leaves) {
+                console.log(`Employee has requested ${leaves} leaves - Auto Approved`)
+            }
+        }
+
+        class programmer extends employee {
+            constructor(name) {
+                super(name)          // ye sabse pehle use karna hi padega....
+                this.name = name
+                console.log(` Programmer constructor is here!!!!!! , This is a newly constructor..`)
+            }
+            // Yaha par JS engine apne aap hi constructor build karleta hai without any problem (child class mei koi constructor ni hai toh automatically create kar dega.)
+            // constructor(...args){
+            //     super(...args)
+            // }
+            requestCoffee(x) {
+                console.log(`Employee has requested for ${x} coffees`)
+            }
+            requestLeaves(leaves) {
+                super.requestLeaves(4)
+                console.log(`One extra is granted`)
+                // console.log(`Employee has requested ${leaves + 1} leaves ( One Extra)`)
+            }
+        }
+
+
+        let e = new programmer("Harry")
+        e.login()
+        e.requestLeaves(3)
+    </script>
+</body>
+
+</html>
