@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructors in JS</title>
+</head>
+<body>
+    
+    <script>
+        //  class railwayForm {
+        //     constructor(givenName , trainNo){
+        //         console.log(" constructor called.... " + givenName + trainNo)
+        //         this.name = givenName
+        //         this.trainNo = trainNo
+        //     }
+        //     submit() {
+        //         alert(this.name + " : Your form is Submitted for train number : " + this.trainNo)
+        //     }
+        //     cancel() {
+        //         alert(this.name + " : Your form is cancelled for train number  : " + this.trainNo)
+        //     }
+        // }
+
+        // // Create and fill a form for Harry
+        // let harryForm = new railwayForm("Harry" , 11111)
+        // // Fill the form with Harry details
+        // // harryForm.fill()           (AB isski jaruat ni hai aese fill karne ki)
+
+
+        // // Create and fill a form for Jerry
+        // let jerryForm1 = new railwayForm("Jerry" , 11420)
+        // let jerryForm2 = new railwayForm("Jerry" , 92111)
+        
+        // // Fill the form with Jerry details
+        // // jerryForm1.fill()        (AB isski jaruat ni hai aese fill karne ki)
+        // // jerryForm2.fill()        (AB isski jaruat ni hai aese fill karne ki)
+ 
+        // harryForm.submit()
+        // jerryForm1.submit()
+        // jerryForm2.submit()
+        // jerryForm1.cancel()
+
+
+        class railwayForm {
+            constructor(givenName , trainNo , address ){
+                console.log(" constructor called.... " + givenName + " " +  trainNo)
+                this.name = givenName
+                this.trainNo = [trainNo]
+                this.address = address
+
+            }
+            preview() {
+                alert(this.name + " : Your form is for for train number : " + this.trainNo + " and your address is  " + this.address)
+            }
+            submit() {
+                alert(this.name + " : Your form is Submitted for train number : " + this.trainNo)
+            }
+            cancel() {
+                alert(this.name + " : Your form is cancelled for train number  : " + this.trainNo)
+                this.trainNo = 0
+            }
+        }
+
+        let harryForm = new railwayForm("Harry" , 111 , "1420 , Bali , Ocean , 000001")
+        harryForm.preview()
+        harryForm.submit()
+        harryForm.cancel()
+        harryForm.preview()
+    </script>
+</body>
+</html>
