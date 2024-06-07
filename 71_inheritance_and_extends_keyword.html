@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance and Extends Keyword</title>
+</head>
+
+<body>
+    <!-- Inheritance => It is a way for one class to extend another class. This is done by using the extends keyword.  -->
+    <!-- The extends Keyword => extends keyword is used to extend another class  -->
+
+
+
+    <script>
+        class animal {
+            constructor(name, faceColor, hairColor) {
+                this.name = name
+                this.faceColor = faceColor
+                this.hairColor = hairColor
+            }
+
+            run() {
+                console.log(this.name + " is running and his face color is : " + this.faceColor + " and the hair color is : " + this.hairColor)
+            }
+            shout() {
+                console.log(this.name + " is Shouting and his face color is : " + this.faceColor + " and the hair color is : " + this.hairColor)
+            }
+        }
+
+
+
+        // Class banao monkey animal se -> ab isse kya hoga na ki animal mei jo methods hai na woo saare monkey mei aajayenge
+
+        class monkey extends animal {
+            eatBanana() {
+                console.log(this.name + " is eating bananaaaaa and his face color is : " + this.faceColor + " and the hair color is :  " + this.hairColor)
+            }
+            hide(){
+                console.log(`${this.name} is hiding `)
+            }
+
+        }
+
+        let ani = new animal("bruno", "white", "black")
+        let m = new monkey("chimpu", "brown", "brown")
+
+
+        ani.shout()
+        // ani.hide()           // ye work ni karega => ani.hide is not a function 
+        m.hide()         // ye work karega araam se 
+        
+        m.eatBanana()
+
+    </script>
+</body>
+
+</html>
