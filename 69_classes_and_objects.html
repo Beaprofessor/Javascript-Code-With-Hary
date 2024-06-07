@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects in JS</title>
+</head>
+
+<body>
+
+    <!-- Class ek template hai and object ek class se bana hua entity hai -->
+
+    <script>
+
+        class railwayForm {
+            submit() {
+                alert(this.name + " : Your form is Submitted for train number : " + this.trainNo)
+            }
+            cancel() {
+                alert(this.name + " : Your form is cancelled for train number  : " + this.trainNo)
+            }
+            fill(givenName , trainNo) {
+                this.name = givenName
+                this.trainNo = trainNo
+            }
+        }
+
+        // Create a form for Harry
+        let harryForm = new railwayForm()
+        // Fill the form with Harry details
+        harryForm.fill("Harry" , 11111)
+
+
+        // Create a form for Jerry
+        let jerryForm1 = new railwayForm()
+        let jerryForm2 = new railwayForm()
+        
+        // Fill the form with Jerry details
+        jerryForm1.fill("Jerry" , 11420)
+        jerryForm2.fill("Jerry" , 92111)
+
+        harryForm.submit()
+        jerryForm1.submit()
+        jerryForm2.submit()
+        jerryForm1.cancel()
+
+    </script>
+</body>
+
+</html>
