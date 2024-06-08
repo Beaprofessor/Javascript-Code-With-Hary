@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters , Setters and Instance of Operators</title>
+
+    <style>
+        body{
+            background-color: #232323;
+
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <script>
+        class animal{
+            constructor(name){
+                this._name = name
+            }
+            fly(){
+                console.log( " Mei udd rha hu ")
+            }
+            get name(){            // getters
+                return this._name
+            }
+            set name(newName){       // setters
+                 this._name = newName 
+            }
+        }
+
+        class dog extends animal{
+            eat(){
+                console.log("eating")
+            }
+        }
+
+        let a = new dog("Systum")
+        a.fly()
+        console.log(a.name)       // yaha par systum hi print karega
+        a.name = "jack"         // yaha par update hua hai 
+        console.log(a.name)      // toh yaha par ab jack print karega
+        let c = 56
+        console.log(c instanceof animal)   // false
+
+        console.log(a instanceof animal)    // true
+        console.log(a instanceof dog)    // true dega  kyuki dog class inherit hui hai animal se.......
+
+
+        // Instanceof Operator ka yahi kaam hai ki wo btata hai ki jo instance tumne banaya hai kya wo uss class ka hai ya nai....... simply true dega agar class ka instance hai toh  and false print karega agar nahi hai toh.... 
+
+    </script>
+    
+</body>
+</html>
