@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set 11</title>
+    <style>
+        body {
+            background-color: #232323;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // Problem - 1 
+        // class complexNo {
+        //     constructor(real, img) {
+        //         this.real = real
+        //         this.img = img
+        //     }
+        //     add(num) {         // problem - 2 
+        //         this.img += num.img
+        //         this.real += num.real
+        //     }
+        // }
+
+        // let a = new complexNo(2, 4)
+        // let b = new complexNo(6, 2)
+        // a.add(b)
+        // console.log(`${a.real} + i${a.img}`)
+
+
+        //  Problem - 3
+        // class human{
+        //     constructor(name , food){
+        //         this.name = name
+        //         this.food = food
+        //     }
+        //     walk(){
+        //         console.log( this.name + " Human is walking")
+        //     }
+
+        // }
+        // class student extends human {
+        //     walk(){      // yaha par apan ne ek function ko override kar diya hai student ka walk chalega naa ki human ka 
+        //         console.log(this.name + " Student is walking")
+        //     }
+
+        // }
+
+        // let o = new student("jack")     
+        // o.walk()       
+
+        // // Problem - 4
+        // console.log(o instanceof human)       // true hoga bhaii kyuki student is inherited from human
+
+
+
+        // Problem - 5
+        class complexNo{
+            constructor(real,img){
+                this._real = real
+                this._img = img
+            }
+            add(num){
+                this._real = this._real + num.real
+                this._img = this._img + num.img
+            }
+            get real(){
+                return this._real 
+            }
+            get img(){
+                return this._img
+            }
+            set name(newReal){       
+                 this._real = newReal
+            }
+            set name(newI){       
+                 this._img =  newImg
+            }
+        }
+
+        let a = new complexNo(2,4)
+        console.log(a.real , a.img)
+        a._real = 10
+        a._img = 10
+        let b = new complexNo(6,2)
+        a.add(b)
+        console.log(`${a._real} + ${a._img}i`)
+
+
+    </script>
+</body>
+
+</html>
