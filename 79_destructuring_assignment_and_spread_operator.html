@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment and Spread Operator</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Destructuring assignment => It is used to unpack values from an array or properties from objects , into distinct variables 
+
+        // let [a,b,c,d] = [1,2,43,4]  // yahi hai apni destructring assignment 
+        // console.log(a,b,c,d)
+        // let [a,b] = arr              
+        // let a = arr[0]
+        // let b = arr[1]
+
+        // let arr = [4, 5, 9, 1, 2, 43, 23, 2, 231231, 1, 2, 2, 31]
+        // let [a, , , ...rest] = arr
+        // console.log(a, rest)
+
+        // let {e, f} = {e:1 , f:5}
+        // console.log(e,f)
+
+
+
+        // Spread Operator
+
+        let arr1 = [1, 2, 3, 123, 12, 3]
+        let obj1 = { ...arr1}      // array ko object mei change kardiya.....
+        console.log(obj1)
+
+        function sum(v1,v2,v3) {
+            return v1 + v2 + v3
+        }
+
+        console.log(sum(...arr1))
+
+
+        let obj2 = {
+            name: "Harry",
+            company: "XXX",
+            address: "Xy"
+        }
+
+        // console.log({...obj2 ,name:"John"}) // yaha par values change hojayegi....
+        console.log({name:"John" , ...obj2})  // ye obj2 ki as it is print kardega koi values mei change ni hoga........
+
+     
+    </script>
+</body>
+
+</html>
