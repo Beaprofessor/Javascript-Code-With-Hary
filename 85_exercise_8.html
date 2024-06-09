@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise - 8</title>
+</head>
+<style>
+    .container {
+        border: 2px solid black;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .btn {
+        justify-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        background-color: #232323;
+        color: white;
+        width: 150px;
+        height: 75px;
+        font-size: 1.5rem;
+    }
+
+    .btn:hover {
+        border: 2px solid white;
+        color: black;
+        background-color: #d5e4c7;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <button class="btn">Set alarm</button>
+    </div>
+    <div id="time"></div>
+    <div id="alarm"></div>
+
+
+    <script>
+
+        function play() {
+            let audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+            audio.play();
+        }
+
+
+        setInterval(() => {
+            let d = new Date().getTime()
+        }, 1000)
+
+
+        const setAlarm = (seconds) => {
+            setTimeout(() => {
+                play()
+            }, seconds * 1000)
+            setInterval(() => {
+                secondsLeft = new Date().getTime() - (d + seconds * 1000)
+                if(secondsLeft > 0){
+                    alarm.innerHTML = "Alarm ringing in " + secondsLeft / 1000 + " seconds"
+                }
+
+            })
+        }
+
+        let s = prompt("After how many seconds do u want an alarm ? ")
+        setAlarm(parseInt(s))
+    </script>
+</body>
+
+</html>
