@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+
+<body>
+<!-- JANHIT MEI JAARI ===>>> 
+     Hoisting is an uknown or overlooked behavior of JS. If a developer doesnt understand hoisting programs may contain bugs(erros).
+     To avoid bugs , always declare all variables at the beginning of the scope.
+     Since this is how JS interprets the code , 
+     It is always a good rule. 
+-->
+
+    <script>
+        console.log(a)   // ye abhi bhi undefined rahega kyuki abhi tak isko initalization ni mili 
+        greet()      // ye work karega
+        function greet() {
+            console.log("Greetings")
+        }
+
+        var a = 9   // declaration hoisted to the top but initialization is not 
+        console.log(a)   // yaha par ye 9 print karega kyuki ab isko value mil chuki hai  
+
+        // iska matlab ye hai ki jitni bhi function declaration hoti hai wo upar aajati hai if we are using the JS.
+
+
+        // JS only hoists declarations , not initializations. The variable will be undefined unitl the line where its initialized is reached.
+
+
+        // console.log(b) // here we cannot access the b before initialization
+        // const b = 7
+        // console.log(b)   // ab b print hojayega kyuuki ab usko after initialzed use kar rhe hai apan
+        // but agr (let, const) ki jagah (var) hota toh wo undefined print na ki error deta..
+
+
+        sum()     // cannot  access sum function before the initializaiton kyuki apan ne const use kiya hai
+        const  sum = () => {
+            console.log("Sum hai bacchuu")
+        }
+
+        // function expressions and class expressions are not hoisted.
+
+    </script>
+</body>
+
+</html>
