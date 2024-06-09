@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Scope and Global Scope</title>
+</head>
+
+<body>
+
+
+    <script>
+        let p = 9   // global scope
+
+        function ax() {
+            let  a = 8
+            console.log(a)     // let and const have block scope  
+            console.log(p)  // ye run hojayega  as p is globally defined
+        }
+        
+        ax()
+        
+        console.log(a)         // a is not available outside the scope
+
+    </script>
+</body>
+
+</html>
