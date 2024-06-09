@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set - 12</title>
+</head>
+
+<body>
+
+    <script>
+        // Problem - 1 
+        // const a = (text) => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve(text)
+        //         }, 2000)
+        //     })
+        // }
+        // (async () => {      // here i have used iife
+        //     let text = await a("Hello")
+        //     console.log(text)
+        //     text = await a("World")
+        //     console.log(text)
+
+        // }
+        // )()
+
+
+        //  Problem  - 2
+        let arr = [1, 2, 3,]
+
+        function avg(a, b, c,) {
+            return (a + b + c) / arr.length
+        }
+
+        console.log(avg(...arr))
+
+
+            // Problem - 3
+
+           const hero = async (text , n=2) => {
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        resolve(text)
+                    },1000*n)
+                })
+           }
+
+                (
+                    async()=>{
+                        let text = await hero("I am resolving after 1 second" , 1)
+                        console.log(text)
+                        text = await hero("I am resolving after 4 seconds" , 4)
+                        console.log(text)
+                    }
+                )()
+
+
+
+        // Problem - 4
+        // S.I. = (P × R × T)/100
+
+        function simpleInterest(p,r,t){
+            return (p*r*t)/100
+        }
+        console.log(simpleInterest(1000, 5, 2))
+
+    </script>
+</body>
+
+</html>
